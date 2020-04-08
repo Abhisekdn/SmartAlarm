@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
     public void setTimer(View v)
     {
 
+        Toast.makeText(getApplicationContext(),"Please do NOT close the application",Toast.LENGTH_SHORT).show();
         AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
 
         Date date= new Date();
@@ -117,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
         m = timePicker.getCurrentMinute();
 
         Toast.makeText(getApplicationContext(),"Alarm set for "+h+":"+m,Toast.LENGTH_SHORT).show();
+
 
     }
 
