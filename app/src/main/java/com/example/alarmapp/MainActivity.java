@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     int mhour,mMin;
     public static boolean called = false;
     Random random = new Random();
-    String Classes[] = {"quiz"};
+    
 
 
 
