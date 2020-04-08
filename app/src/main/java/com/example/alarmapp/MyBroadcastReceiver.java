@@ -45,12 +45,7 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
 
 
 
-//        setAlram.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
+
 
     }
 

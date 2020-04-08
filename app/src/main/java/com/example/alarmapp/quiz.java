@@ -27,27 +27,6 @@ public class quiz extends AppCompatActivity {
 
     Random random = new Random();
 
-
-//    public void CancelAlarm(View v)
-//    {
-//
-//        Intent i = new Intent(quiz.this,MyBroadcastReceiver.class);
-//        PendingIntent pendingIntent = PendingIntent.getBroadcast(quiz.this,1,i,0);
-//        AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
-//
-//        Ringtone r;
-//        r = com.example.alarmapp.MyBroadcastReceiver.ringtone;
-//        alarmManager.cancel(pendingIntent);
-//        if(r.isPlaying())
-//            r.stop();
-//
-//        Toast.makeText(getApplicationContext(),"Alarm stopped",Toast.LENGTH_SHORT).show();
-//
-//    }
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

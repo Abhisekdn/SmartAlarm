@@ -1,8 +1,5 @@
 package com.example.alarmapp;
 
-
-import android.graphics.drawable.Drawable;
-
 public class imagesLib {
     private int [] dots = new int[]{
             R.drawable.four,
