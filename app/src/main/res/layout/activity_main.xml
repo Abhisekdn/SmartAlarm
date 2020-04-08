@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardviewbackground"
+        app:cardBackgroundColor="#000000"
+        android:layout_width="384dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="2"
+        android:layout_rowWeight="1"
+        app:cardElevation="6dp"
+        app:cardCornerRadius="18dp"
+        android:layout_margin="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TimePicker
+                android:layout_width="300dp"
+                android:layout_height="385dp"
+                android:layout_centerHorizontal="true"
+                android:padding="15dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/timePicker"
+                android:timePickerMode="clock"
+                android:numbersBackgroundColor="#FFFFFF"
+                android:numbersTextColor="#000000"
+                android:numbersSelectorColor="#ff7d05"
+                android:numbersInnerTextColor="#000000"
+                android:elevation="20dp"
+                android:headerBackground="#ff7d05"
+
+                />
+
+        </LinearLayout>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"
+        android:id="@+id/timeTextView"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:text="Time: "
+    />
+
+    <androidx.cardview.widget.CardView
+        android:layout_below="@+id/cardviewbackground"
+        app:cardBackgroundColor="#000000"
+        android:layout_width="384dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="2"
+        android:layout_rowWeight="1"
+        app:cardElevation="6dp"
+        app:cardCornerRadius="18dp"
+        android:layout_margin="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <Button
+                android:id="@+id/btsetAlarm"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/cardviewbackground"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/newfile"
+                android:onClick="setTimer"
+
+                />
+
+
+            <Button
+                android:id="@+id/btStop"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/cardviewbackground"
+                android:layout_centerHorizontal="false"
+                android:layout_marginLeft="40dp"
+                android:background="@drawable/stop1"></Button>
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_below="@+id/btsetAlarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="65dp"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:text="Set Alarm "
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            />
+        <TextView
+            android:layout_below="@+id/btsetAlarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="65dp"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:text="Stop Alarm"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            />
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+</RelativeLayout>

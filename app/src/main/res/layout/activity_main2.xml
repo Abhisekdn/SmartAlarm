@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical"
+    tools:context=".quiz">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginBottom="40dp">
+
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardviewbackground1"
+        android:layout_width="330dp"
+        android:layout_height="102dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="2"
+        android:layout_margin="12dp"
+        app:cardBackgroundColor="#616161"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="6dp">
+
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="40dp"
+            android:padding="8dp"
+            android:text="which of these is alive?"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="bird"
+        android:background="#ff7d05"
+        android:textColor="#fff"
+        android:padding="8dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="50dp"
+        android:id="@+id/choice1"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="door"
+        android:background="#ff7d05"
+        android:textColor="#fff"
+        android:padding="8dp"
+        android:layout_marginBottom="24dp"
+        android:id="@+id/choice2"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="rock"
+        android:background="#ff7d05"
+        android:textColor="#fff"
+        android:padding="8dp"
+        android:layout_marginBottom="24dp"
+        android:id="@+id/choice3"/>
+
+<!--    <Button-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="quit"-->
+<!--        android:background="#B71C1C"-->
+<!--        android:textColor="#fff"-->
+<!--        android:padding="8dp"-->
+<!--        android:layout_marginBottom="24dp"-->
+<!--        android:id="@+id/quit"/>-->
+
+
+</LinearLayout>
