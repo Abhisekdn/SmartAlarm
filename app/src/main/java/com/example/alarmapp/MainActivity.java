@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     int mhour,mMin;
     public static boolean called = false;
+
     Random random = new Random();
 
 
@@ -84,40 +85,43 @@ public class MainActivity extends AppCompatActivity {
 
     public void setTimer(View v)
     {
+        if(called==false) {
 
-        Toast.makeText(getApplicationContext(),"Please do NOT close the application",Toast.LENGTH_SHORT).show();
-        AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+            Toast.makeText(getApplicationContext(), "Please do NOT close the application", Toast.LENGTH_SHORT).show();
+            AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
-        Date date= new Date();
-        Calendar cal_alarm = Calendar.getInstance();
-        Calendar cal_now = Calendar.getInstance();
+            Date date = new Date();
+            Calendar cal_alarm = Calendar.getInstance();
+            Calendar cal_now = Calendar.getInstance();
 
-        cal_now.setTime(date);
-        cal_alarm.setTime(date);
+            cal_now.setTime(date);
+            cal_alarm.setTime(date);
 
-        cal_alarm.set(Calendar.HOUR_OF_DAY,mhour);
-        cal_alarm.set(Calendar.MINUTE,mMin);
-        cal_alarm.set(Calendar.SECOND,0);
+            cal_alarm.set(Calendar.HOUR_OF_DAY, mhour);
+            cal_alarm.set(Calendar.MINUTE, mMin);
+            cal_alarm.set(Calendar.SECOND, 0);
 
-        if(cal_alarm.before(cal_now))
-        {
-            cal_alarm.add(Calendar.DATE,1);
+            if (cal_alarm.before(cal_now)) {
+                cal_alarm.add(Calendar.DATE, 1);
 
+            }
+
+            Intent i = new Intent(MainActivity.this, MyBroadcastReceiver.class);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 1, i, 0);
+
+            alarmManager.set(AlarmManager.RTC_WAKEUP, cal_alarm.getTimeInMillis(), pendingIntent);
+
+
+            timePicker = (TimePicker) findViewById(R.id.timePicker);
+            int h, m;
+            h = timePicker.getCurrentHour();
+            m = timePicker.getCurrentMinute();
+
+            Toast.makeText(getApplicationContext(), "Alarm set for " + h + ":" + m, Toast.LENGTH_SHORT).show();
         }
-
-        Intent i = new Intent(MainActivity.this,MyBroadcastReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.this,1,i,0);
-
-        alarmManager.set(AlarmManager.RTC_WAKEUP,cal_alarm.getTimeInMillis(),pendingIntent);
-
-
-
-        timePicker = (TimePicker) findViewById(R.id.timePicker);
-        int h,m;
-        h=timePicker.getCurrentHour();
-        m = timePicker.getCurrentMinute();
-
-        Toast.makeText(getApplicationContext(),"Alarm set for "+h+":"+m,Toast.LENGTH_SHORT).show();
+        else{
+            Toast.makeText(getApplicationContext(),"Stop the alarm to set the next one",Toast.LENGTH_SHORT).show();
+        }
 
 
     }

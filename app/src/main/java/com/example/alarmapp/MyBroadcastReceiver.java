@@ -24,6 +24,7 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
+//        MainActivity.called = false;
         Toast.makeText(context,"Time to get up!",Toast.LENGTH_SHORT).show();
         Vibrator vibrator = (Vibrator)context.getSystemService(Context.VIBRATOR_SERVICE);
         vibrator.vibrate(2000);
