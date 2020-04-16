@@ -7,6 +7,7 @@
     android:background="#FFFFFF"
     tools:context=".MainActivity">
 
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardviewbackground"
         app:cardBackgroundColor="#000000"
@@ -38,7 +39,9 @@
                 android:numbersSelectorColor="#ff7d05"
                 android:numbersInnerTextColor="#000000"
                 android:elevation="20dp"
+                tools:ignore="UnusedAttribute"
                 android:headerBackground="#ff7d05"
+                android:transitionName="clockTransition"
 
                 />
 

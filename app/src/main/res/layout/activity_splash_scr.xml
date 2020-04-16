@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".splashScr">
+
+    <ImageView
+        android:id="@+id/splashscr"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_centerVertical="false"
+        android:layout_marginTop="320dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/splashscr" />
+
+    <ImageView
+        android:id="@+id/splashclock"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
+        android:src="@drawable/splashclock"
+        android:transitionName="clockTransition" />
+
+
+</RelativeLayout>
