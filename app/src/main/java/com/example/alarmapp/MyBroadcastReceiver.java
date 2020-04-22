@@ -24,10 +24,11 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-//        MainActivity.called = false;
+        long pattern[]={500,100,1000,500,2000,1000,1000,500,500,100};
         Toast.makeText(context,"Time to get up!",Toast.LENGTH_SHORT).show();
         Vibrator vibrator = (Vibrator)context.getSystemService(Context.VIBRATOR_SERVICE);
-        vibrator.vibrate(2000);
+        vibrator.vibrate(pattern,1);
+
 
         Notification noti = new Notification.Builder(context)
                 .setContentTitle("Alarm is ON")
@@ -43,11 +44,6 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
         ringtone = RingtoneManager.getRingtone(context,notification);
         ringtone.play();
         MainActivity.called = true;
-
-
-
-
-
     }
 
 }

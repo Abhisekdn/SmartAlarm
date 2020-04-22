@@ -1,11 +1,15 @@
 package com.example.alarmapp;
 
+import androidx.annotation.DrawableRes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.Ringtone;
 import android.os.Bundle;
 import android.view.View;
@@ -30,10 +34,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         Button setAlarm=(Button)findViewById(R.id.btStop);
         setAlarm.setOnClickListener(new View.OnClickListener() {
@@ -86,8 +93,14 @@ public class MainActivity extends AppCompatActivity {
     public void setTimer(View v)
     {
         if(called==false) {
+            SharedPreferences preferences = getSharedPreferences("PREFS",0);
+            boolean ifShowDailog1 = preferences.getBoolean("showDailog",true);
+            if (ifShowDailog1){
+                showDailog();
+            }
+//            showDailog();
 
-            Toast.makeText(getApplicationContext(), "Please do NOT close the application", Toast.LENGTH_SHORT).show();
+
             AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
             Date date = new Date();
@@ -124,6 +137,30 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+    }
+    public void showDailog()
+    {
+        new AlertDialog.Builder(this)
+                .setTitle("Important")
+                .setMessage("Android requires all third party alarm apps to be running atleast in background for full functionality. Please remember to leave the app running before you go to bed. We also recommend that you have atleast 50% of your battery life")
+                .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .setNeutralButton("Never show this message", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        SharedPreferences preferences = getSharedPreferences("PREFS",0);
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.putBoolean("showDailog",false);
+                        editor.apply();
+                    }
+                })
+                .setIcon(R.drawable.triangle)
+                .show();
     }
 
 //    public void CancelAlarm(View v)

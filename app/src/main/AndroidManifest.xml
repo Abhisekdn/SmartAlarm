@@ -8,7 +8,7 @@
         android:allowBackup="true"
         android:icon="@drawable/splashclock"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/set2"
+        android:roundIcon="@mipmap/icon_clock_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
         <activity android:name=".MainActivity"></activity>

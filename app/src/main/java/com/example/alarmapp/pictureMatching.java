@@ -68,7 +68,7 @@ public class pictureMatching extends AppCompatActivity {
                         ((ImageView) view).setImageResource(drawable[pos[position]]);
                         countPair++;
                         if (countPair == 3) {
-                            Toast.makeText(pictureMatching.this, "You Win! Have a Great day", Toast.LENGTH_LONG).show();
+                            Toast.makeText(pictureMatching.this, "Correct! Have a Great day", Toast.LENGTH_LONG).show();
                             CancelAlarm();
                             Intent i = new Intent(pictureMatching.this,MainActivity.class);
                             startActivity(i);
@@ -104,7 +104,7 @@ public class pictureMatching extends AppCompatActivity {
             r.stop();
         MainActivity.called = false;
 
-        Toast.makeText(getApplicationContext(),"Alarm stopped",Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getApplicationContext(),"Alarm stopped",Toast.LENGTH_SHORT).show();
 
 
     }
