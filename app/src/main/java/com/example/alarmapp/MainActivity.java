@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 mhour = hourOfDay;
                 mMin = minute;
 
+
                 textView.setText(textView.getText().toString()+" "+mhour+":"+mMin);
 
             }
@@ -126,9 +127,10 @@ public class MainActivity extends AppCompatActivity {
 
 
             timePicker = (TimePicker) findViewById(R.id.timePicker);
-            int h, m;
-            h = timePicker.getCurrentHour();
-            m = timePicker.getCurrentMinute();
+            String h, m;
+            h = timePicker.getCurrentHour().toString();
+            m = timePicker.getCurrentMinute().toString();
+
 
             Toast.makeText(getApplicationContext(), "Alarm set for " + h + ":" + m, Toast.LENGTH_SHORT).show();
         }

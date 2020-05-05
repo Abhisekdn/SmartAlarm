@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.Ringtone;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -99,6 +100,8 @@ public class pictureMatching extends AppCompatActivity {
 
         Ringtone r;
         r = com.example.alarmapp.MyBroadcastReceiver.ringtone;
+        Vibrator vibrator = MyBroadcastReceiver.vibrator;
+        vibrator.cancel();
         alarmManager.cancel(pendingIntent);
         if(r.isPlaying())
             r.stop();

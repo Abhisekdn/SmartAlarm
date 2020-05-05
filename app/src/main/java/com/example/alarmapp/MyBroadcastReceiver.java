@@ -18,6 +18,7 @@ import com.example.alarmapp.R;
 
 public class MyBroadcastReceiver extends BroadcastReceiver {
     public static Ringtone ringtone;
+    public static Vibrator vibrator;
 
 
 
@@ -26,7 +27,7 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
 
         long pattern[]={500,100,1000,500,2000,1000,1000,500,500,100};
         Toast.makeText(context,"Time to get up!",Toast.LENGTH_SHORT).show();
-        Vibrator vibrator = (Vibrator)context.getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator = (Vibrator)context.getSystemService(Context.VIBRATOR_SERVICE);
         vibrator.vibrate(pattern,1);
 
 

@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.Ringtone;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
@@ -125,11 +126,14 @@ public class quiz extends AppCompatActivity {
         AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
 
         Ringtone r;
+        Vibrator vibrator = MyBroadcastReceiver.vibrator;
         r = com.example.alarmapp.MyBroadcastReceiver.ringtone;
         alarmManager.cancel(pendingIntent);
         if(r.isPlaying())
             r.stop();
+        vibrator.cancel();
         MainActivity.called = false;
+
 
 //        Toast.makeText(getApplicationContext(),"Alarm stopped",Toast.LENGTH_SHORT).show();
 

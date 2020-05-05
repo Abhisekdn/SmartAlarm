@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.Ringtone;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -75,6 +76,8 @@ public class countNumber extends AppCompatActivity {
         alarmManager.cancel(pendingIntent);
         if(r.isPlaying())
             r.stop();
+        Vibrator vibrator = MyBroadcastReceiver.vibrator;
+        vibrator.cancel();
         MainActivity.called = false;
 
 //        Toast.makeText(getApplicationContext(),"Alarm stopped",Toast.LENGTH_SHORT).show();
